@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Dashboard Habib Bank</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <h1 class="text-2xl text-center py-10">Dashboard<span class="text-orange-300">Habib Bank</span></h1>
+<main>
+    <section class="w-3/4 mx-auto">
+        <div class="grid grid-cols-3 gap-5">
+            <div class="bg-sky-300 text-white rounded-xl p-8">
+                <h2 class="text-2xl">Deposit</h2>
+                <h3 class="text-4xl font-semibold">$ <span id="depositAmountField">000</span></h3>
+            </div>
+            <div class="bg-red-300 text-white rounded-xl p-8">
+                <h2 class="text-2xl">Withdraw</h2>
+                <h3 class="text-4xl font-semibold">$ <span id="withdrawTotal">000</span></h3>
+            </div>
+            <div class="bg-green-300 text-white rounded-xl p-8">
+                <h2 class="text-2xl">Balance</h2>
+                <h3 class="text-4xl font-semibold">$ <span id="totalBalance">1500</span></h3>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-5 mt-8">
+            <div class="space-y-5 bg-green-300 p-8 rounded-xl">
+                <h3 class="text-2xl text-white">Please deposit your money</h3>
+
+                <input id="depositField" class="block h-9 border-slate-400 border-2" type="" placeholder="$Deposit">     
+
+                <button id="depositButton" class="py-3 px-5 bg-green-600 rounded text-white">deposit</button>
+            </div>
+
+            <div class="space-y-5 bg-red-300 p-8 rounded-xl">
+                <h3 class="text-2xl text-white"> Withdraw your money</h3>
+
+                <input id="withdrawField" class="block h-9 border-slate-400 border-2" type="" placeholder="$Deposit">     
+
+                <button id="withdrawButton" class="py-3 px-5 bg-red-600 rounded text-white">Withdraw</button>
+            </div>
+            
+        </div>
+    </section>
+
+</main>
+
+    <script src="js/banking.js"></script>
+</body>
+
+</html>
