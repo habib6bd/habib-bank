@@ -16,6 +16,7 @@ const newDepositAmount = depositAmount + prevDepositAmount;
 depositAmountField.innerText = newDepositAmount; 
 //   console.log(newDepositAmount);
 
+//update Balance
 const totalBalanceAmount = document.getElementById('totalBalance');
 const totalBalanceText = totalBalanceAmount.innerText;
 const totalBalance = parseFloat(totalBalanceText);
@@ -36,15 +37,22 @@ const withdrawField = document.getElementById('withdrawField')
    const withdrawAmount = parseFloat(withdrawAmountText)
 //    console.log(withdrawAmount);
 
+//update withdraw
 const withdrawTotal = document.getElementById('withdrawTotal');
- withdrawTotal.innerText = withdrawAmount;
-// console.log(withdrawAmount);
+const prevWithdrawTotalText = withdrawTotal.innerText;
+const prevWithdrawTotalAmount = parseFloat(prevWithdrawTotalText);
 
-const prevWithdrawAmountText =  withdrawTotal.innerText;
-const prevWithdrawAmount = parseFloat(prevWithdrawAmountText);
-console.log(prevWithdrawAmount);
+const newWithdrawTotal = prevWithdrawTotalAmount + withdrawAmount;
+withdrawTotal.innerText = newWithdrawTotal;
 
-const newWithdrawAmount = withdrawAmount + prevWithdrawAmount;
- withdrawField.innerText = newWithdrawAmount; 
-// console.log(newWithdrawAmount);
+//update balance
+const totalBalanceAmount = document.getElementById('totalBalance');
+const totalBalanceText = totalBalanceAmount.innerText;
+const totalBalance = parseFloat(totalBalanceText);
+// console.log(totalBalance);  
+
+const newBalanceTotal = totalBalance - withdrawAmount;
+totalBalanceAmount.innerText = newBalanceTotal;
+
+withdrawField.value = '';
 })
